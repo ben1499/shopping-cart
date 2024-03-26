@@ -11,3 +11,5 @@ const Shop = () => {
         </StyledMain>
     )
 }
+
+export default Shop;
