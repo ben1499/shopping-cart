@@ -3,7 +3,8 @@ import bgImg from "../assets/main-bg.webp"
 
 const Hero = styled.main`
     background: url(${bgImg});
-    color: #fff;
+    color: #e2e8f0;
+    text-shadow: 1px 1px 6px rgb(0, 0, 0, 0.6);
     height: 600px;
     display: flex;
     flex-direction: column;

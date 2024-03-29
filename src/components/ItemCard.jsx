@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import PropTypes from "prop-types"
-import { useState } from "react";
 import { useOutletContext } from "react-router-dom";
 
 const StyledCard = styled.div`
@@ -9,24 +8,50 @@ const StyledCard = styled.div`
     align-items: center;
     padding: 24px;
     width: 300px;
-    box-shadow: 2px 2px 6px 2px rgb(0, 0, 0, 0.2)
+    box-shadow: 2px 2px 6px 2px rgb(0, 0, 0, 0.2);
+    background-color: #fff;
 `
 
 const Title = styled.div`
     font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    width: 250px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-top: 8px;
 `
 
 const Price = styled.div`
     font-weight: bold;
+    font-size: 20px;
 `
 
 const Counter = styled.div`
-    display: flex
+    display: flex;
+    margin-top: 10px;
+`
+
+const CounterBtn = styled.button`
+    border: none;
+    background-color: #64748b;
+    color: #fff;
+    font-size: 18px;
+    padding: 2px 8px;
+
+    &:hover {
+        opacity: 0.9;
+    }
+
+    &:active {
+        background-color: #475569;
+    }
 `
 
 const ItemCard = ({ data }) => {
 
-    const [products, addToCart, removeFromCart, inputQuantity] = useOutletContext();
+    const [, addToCart, removeFromCart, inputQuantity] = useOutletContext();
 
     const handleInputChange = (e, id) => {
         const value = +(e.target.value);
@@ -42,9 +67,9 @@ const ItemCard = ({ data }) => {
             <Price>$ {data.price}</Price>
 
             <Counter>
-                <button onClick={() => removeFromCart(data.id)}>-</button>
+                <CounterBtn onClick={() => removeFromCart(data.id)}>-</CounterBtn>
                 <input style={{ width: "50px", textAlign: "center" }} type="number" value={data.quantity} onChange={(e) => handleInputChange(e, data.id)} />
-                <button onClick={() => addToCart(data.id)}>+</button>
+                <CounterBtn onClick={() => addToCart(data.id)}>+</CounterBtn>
             </Counter>
         </StyledCard>
     )

@@ -21,24 +21,37 @@ const CartNumber = styled.div`
     border: 2px solid red;
 `
 
+const StyledLink = styled(Link)`
+    color: #fff;
+    text-decoration: none;
+
+    &:hover {
+        color: #e2e8f0;
+    }
+
+    &:active {
+        color: #94a3b8;
+    }
+`
+
 const Header = ({cartNumber}) => {
     const location = useLocation();
 
     return (
         <header>
-            <h1>Shopsy</h1>
+            <h1><StyledLink>Shopsy</StyledLink></h1>
             <nav>
                 <ul>
                     <li>
-                        <Link style={{color: "#fff", textDecoration: "none"}} to="/">Home</Link>
+                        <StyledLink to="/">Home</StyledLink>
                     </li>
                     <li>
-                        <Link style={{color: "#fff", textDecoration: "none"}} to="/shop">Shop</Link>
+                        <StyledLink to="/shop">Shop</StyledLink>
                     </li>
                     {location.pathname.includes("shop") ? (
                         <div style={{ position: "relative", cursor: "pointer" }}>
-                            <Link to="/shop/cart">
-                                <FontAwesomeIcon icon={faCartShopping} />
+                            <Link style={{color: "#fff", textDecoration: "none"}} to="/shop/cart">
+                                <FontAwesomeIcon className="header-link" icon={faCartShopping} />
                                 {cartNumber ? (<CartNumber>{cartNumber}</CartNumber>) : null }
                             </Link>
                         </div>
