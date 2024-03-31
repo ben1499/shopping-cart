@@ -1,0 +1,43 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`App component > renders App component 1`] = `
+<div>
+  <header>
+    <h1>
+      <a
+        class="sc-guDLey bysVtm"
+        href="/"
+      >
+        Shopsy
+      </a>
+    </h1>
+    <nav>
+      <ul>
+        <li>
+          <a
+            class="sc-guDLey bysVtm"
+            href="/"
+          >
+            Home
+          </a>
+        </li>
+        <li>
+          <a
+            class="sc-guDLey bysVtm"
+            href="/shop"
+          >
+            Shop
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <footer
+    class="sc-dmyCSP edkHKz"
+  >
+    <p>
+      © 2024 Shopsy
+    </p>
+  </footer>
+</div>
+`;
