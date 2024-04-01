@@ -49,7 +49,7 @@ const Header = ({cartNumber}) => {
                         <StyledLink to="/shop">Shop</StyledLink>
                     </li>
                     {location.pathname.includes("shop") ? (
-                        <div style={{ position: "relative", cursor: "pointer" }}>
+                        <div data-testid="cart" style={{ position: "relative", cursor: "pointer" }}>
                             <Link style={{color: "#fff", textDecoration: "none"}} to="/shop/cart">
                                 <FontAwesomeIcon className="header-link" icon={faCartShopping} />
                                 {cartNumber ? (<CartNumber>{cartNumber}</CartNumber>) : null }

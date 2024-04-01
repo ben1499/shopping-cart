@@ -18,7 +18,6 @@ function App() {
     fetch("https://fakestoreapi.com/products/")
       .then((res) => res.json())
       .then((res) => {
-        console.log("Got called");
         let filteredList = res.filter(
           (item) => item.category !== "electronics"
         );
